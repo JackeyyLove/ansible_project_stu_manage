@@ -1,0 +1,6 @@
+---
+# vars file for roles/db
+db_container_name: mysqldb
+db_image: mysql
+db_root_password: root
+db_name: studentdb

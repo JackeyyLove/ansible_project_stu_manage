@@ -1,0 +1,15 @@
+---
+# tasks file for roles/api
+- name: Pull backend image from Dockerhub
+  community.docker.docker_image:
+    name: louisdevops/student-management-backend
+    source: pull
+- name: Run backend container
+  community.docker.docker_container:
+    name: student-backend
+    image: louisdevops/student-management-backend
+    ports: 
+      - "8080:8080"
+    networks: 
+      - name: spring-mysql-net
+    restart: true

@@ -1,0 +1,17 @@
+---
+# tasks file for roles/db
+- name: Create a Mysql database
+  community.docker.docker_container:
+    name: "{{ db_container_name }}"
+    image: "{{ db_image }}"
+    volumes: 
+      - db-data:/var/lib/mysql
+    ports:
+      - "3306:3306"
+    networks: 
+      - name: spring-mysql-net
+    env: 
+      MYSQL_ROOT_PASSWORD: "{{ db_root_password }}"
+      MYSQL_DATABASE: "{{ db_name }}"
+    
+  

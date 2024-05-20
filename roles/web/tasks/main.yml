@@ -1,0 +1,16 @@
+---
+# tasks file for roles/web
+- name: Pull frontend image from Dockerhub
+  docker_image: 
+    name: louisdevops/student-management-frontend
+    source: pull 
+- name: Run frontend container
+  community.docker.docker_container: 
+    name: {{container_name}}
+    image: {{image}}
+    ports: 
+      - "3000:3000"
+    detach: true
+    networks: 
+      - name: spring-mysql-net
+    

@@ -1,0 +1,4 @@
+---
+# vars file for roles/api
+container_name: student-backend
+image: louisdevops/student-management-backend

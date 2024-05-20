@@ -1,0 +1,4 @@
+---
+# vars file for roles/web
+container_name: student-frontend
+image: louisdevops/student-management-frontend
