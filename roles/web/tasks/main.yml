@@ -6,8 +6,8 @@
     source: pull 
 - name: Run frontend container
   community.docker.docker_container: 
-    name: {{container_name}}
-    image: {{image}}
+    name: "{{container_name}}"
+    image: "{{image}}"
     ports: 
       - "3000:3000"
     detach: true
